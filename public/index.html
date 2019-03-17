@@ -14,13 +14,13 @@
 
         <script>
 
-          let googleURL = "https://accounts.google.com/o/oauth2/v2/auth";
+
+          let discordURL = "https://discordapp.com/api/oauth2/authorize";
 
           let options = {
-            client_id:'YOUR-GOOGLE-CLIENT-ID',
-            redirect_uri: 'YOUR-SERVER-URL/oauth',
-            scope: 'email openid profile',
-            prompt: 'consent',
+            client_id:'532814951497334788',
+            redirect_uri: 'http://localhost:8080',
+            scope: 'identify email',
             response_type: 'code'
           };
 
@@ -28,9 +28,9 @@
             return `${key}=` + encodeURIComponent(options[key]);
           }).join("&");
 
-          let authURL = `${googleURL}?${QueryString}`;
+          let authURL = `${discordURL}?${QueryString}`;
 
-          $('#oauth').append(`<a href="${authURL}">Login With Google</a>`);
+          $('#oauth').append(`<a href="${authURL}">Login With Discord</a>`);
 
         </script>
 
