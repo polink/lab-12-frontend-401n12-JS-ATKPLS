@@ -19,9 +19,11 @@
 
           let options = {
             client_id:'532814951497334788',
-            redirect_uri: 'http://localhost:8080',
+            redirect_uri: 'http://localhost:3000/oauth',
             scope: 'identify email',
-            response_type: 'code'
+              grant_type: 'authorization_code',
+              response_type: 'code',
+              code: 'code'
           };
 
           let QueryString = Object.keys(options).map( (key,i) => {
